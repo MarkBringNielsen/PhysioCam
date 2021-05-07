@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace PhysioCam.Data
 {
     public class TrainingProgram
     {
-        public List<Exercise> Exercises { get; }
+        public ObservableCollection<Exercise> Exercises { get; }
 
         public TrainingProgram()
         {
-            Exercises = new List<Exercise>();
+            Exercises = new ObservableCollection<Exercise>();
         }
 
         public void AddExercise(Exercise exercise)

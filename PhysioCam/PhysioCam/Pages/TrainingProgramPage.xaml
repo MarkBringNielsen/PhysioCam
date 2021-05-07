@@ -12,12 +12,17 @@
             <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical" Padding="0,10,0,50">
                 <Button Text="Add new exercise" Style="{StaticResource LightBtn}" Clicked="AddExerciseButtonClicked"/>
 
-                <ListView x:Name="ExerciseListView" ItemsSource="{Binding Exercises}">
+                <ListView x:Name="ExerciseListView" ItemsSource="{Binding Exercises}"  HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding Name}">
-                                
-                            </TextCell>
+                            <ViewCell>
+                                <Frame BackgroundColor="{StaticResource DarkGreen}" Style="{StaticResource GreyFrame}">
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Name}" TextColor="White" VerticalOptions="CenterAndExpand"/>
+                                        <Button Text="X" HorizontalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
 

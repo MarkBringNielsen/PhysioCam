@@ -12,6 +12,14 @@ namespace PhysioCam.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DescriptionView : ContentView
     {
+        public string Description 
+        { 
+            get 
+            {
+                return description.Text;
+            } 
+             
+        }
         public DescriptionView()
         {
             InitializeComponent();
@@ -20,6 +28,11 @@ namespace PhysioCam.Views
         private void DescriptionButtonOnClicked(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
+        }
+
+        internal void Reset()
+        {
+            description.Text = string.Empty;
         }
     }
 }

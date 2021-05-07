@@ -34,7 +34,8 @@
 
                 <Button Text="Send training program"
                         Style="{StaticResource LightBtn}"
-                        Padding="0,20"/>
+                        Padding="0,20"
+                        Clicked="SendButtonClicked"/>
 
             </StackLayout>
         </StackLayout>

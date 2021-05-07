@@ -21,7 +21,7 @@
             <views:DescriptionView x:Name="exerciseDescription"/>
             
             <StackLayout Spacing="75" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
-                <Button Text="New Exercise"                     
+                <Button Text="Next exercise"                     
                         Style="{StaticResource DarkBtn}"
                         Clicked="NewExerciseButtonOnClicked"/>
                 <Button Text="Done"

@@ -4,16 +4,19 @@ using PhysioCam.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PhysioCam.Data;
+using PhysioCam.ViewModels;
 
 namespace PhysioCam.ExercisePages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExercisePage : ContentPage
     {
+        private TrainingProgramViewModel _viewModel;
         public List<ExercisePictureButtonView> ButtonViews { get; set; }
         
         public ExercisePage()
         {
+            _viewModel = DependencyService.Get<TrainingProgramViewModel>();
             ButtonViews = new List<ExercisePictureButtonView>
             {
                 new ExercisePictureButtonView(),
@@ -26,20 +29,22 @@ namespace PhysioCam.ExercisePages
         private void NewExerciseButtonOnClicked(object sender, EventArgs e)
         {
             // TODO: Save this exercise
-           
-            Navigation.PopAsync();
-            Navigation.PushAsync(new ExercisePage());
+
+            SaveExercise();
+            exerciseName.Text = string.Empty;
+            exerciseDescription.Reset();
         }
 
         private async void DoneButtonOnClicked(object sender, EventArgs e)
         {
+
+            SaveExercise();
             await Navigation.PopAsync();    
         }
 
-        private void SaveExercise(object sender)
+        private void SaveExercise()
         {
-            
-             new Exercise(exerciseName.Text, "");
+            _viewModel.AddNewExercise(exerciseName.Text, exerciseDescription.Description);
         }
     }
 }
