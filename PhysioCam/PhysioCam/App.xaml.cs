@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PhysioCam.ExercisePages;
+using PhysioCam.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -10,9 +11,15 @@ namespace PhysioCam
     {
         public App()
         {
+            RegisterServices();
+            
             InitializeComponent();
-
             MainPage = new NavigationPage(new MainPage());
+        }
+
+        private void RegisterServices()
+        { 
+            DependencyService.Register<ExerciseViewModel>();
         }
 
         protected override void OnStart()

@@ -2,6 +2,7 @@
 
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PhysioCam.ExercisePages;assembly=PhysioCam"
              x:Class="PhysioCam.Views.DescriptionView">
     <ContentView.Content>
         <StackLayout>
@@ -10,7 +11,13 @@
                     Clicked="DescriptionButtonOnClicked"/>
             
             <ScrollView HeightRequest="{OnPlatform iOS=250, Android= 250}" VerticalOptions="End">
-                <Editor AutoSize="TextChanges" Placeholder="Describe the exercise" PlaceholderColor="Black" FontFamily="Roboto-Regular" BackgroundColor="{StaticResource Grey}">
+                <Editor x:Name="DescriptionEditor"
+                        Text="{Binding CurrentDescription, Mode=TwoWay}"
+                        AutoSize="TextChanges"
+                        Placeholder="Describe the exercise"
+                        PlaceholderColor="Black"
+                        FontFamily="Roboto-Regular"
+                        BackgroundColor="{StaticResource Grey}">
                 </Editor>
             </ScrollView>
             

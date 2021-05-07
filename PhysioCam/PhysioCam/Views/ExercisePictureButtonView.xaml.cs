@@ -1,4 +1,5 @@
 ﻿using System;
+using PhysioCam.ViewModels;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Xamarin.Forms;

@@ -20,7 +20,7 @@
                 </StackLayout>
             </ScrollView>
             
-            <views:DescriptionView/>
+            <views:DescriptionView x:Name="View"/>
             
             <StackLayout Spacing="75" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                 <Button Text="New Exercise"                     
