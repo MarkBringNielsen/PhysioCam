@@ -12,8 +12,6 @@
                     <Entry Placeholder="Training program - Name" Style="{StaticResource UserEntry}"/>
                 </Frame>
                 
-                <Button Text="Review program"
-                        Style="{StaticResource DarkBtn}"/>
                 <Label
                     FontFamily="Roboto-Regular"
                     FontSize="20"

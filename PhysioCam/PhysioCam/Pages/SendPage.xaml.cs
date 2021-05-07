@@ -38,25 +38,16 @@ namespace PhysioCam.ExercisePages
         }
 
 
-        async void OnButtonClicked(object sender, EventArgs args)
+        
+
+        private async void SendButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ExercisePage());
+            await Navigation.PopToRootAsync();
         }
 
-        private void DoneButtonOnClicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        private void CancelButtonOnClicked(object sender, EventArgs e)
-        {
-            Navigation.PopToRootAsync();
-        }
-
-        private void SaveAndQUitButtonOnClicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        
 
     }
 }

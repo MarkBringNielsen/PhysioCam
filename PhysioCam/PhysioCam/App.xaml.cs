@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using PhysioCam.ExercisePages;
+using PhysioCam.Pages;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 

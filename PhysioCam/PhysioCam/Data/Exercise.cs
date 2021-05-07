@@ -5,11 +5,22 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace PhysioCam.Data
 {
-    class Exercise
+    public class Exercise
     {
 
-        public string name { get; set; }
-        public List<Image> Images { get; set; }
+        public Exercise() { }
+
+        public Exercise(string name, string description)
+        {
+            Name = name;
+            Description = description;
+        }
+
+        public string Name { get; set; }
+        //public List<Image> Images { get; set; }
+
+        public string Description { get; set; }
+
 
 
     }

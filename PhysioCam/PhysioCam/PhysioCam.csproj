@@ -27,11 +27,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="ExercisePages\ExercisePage.xaml.cs">
+      <Compile Update="Pages\ExercisePage.xaml.cs">
         <DependentUpon>ExercisePage.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="ExercisePages\TrainingProgramPage.xaml.cs">
+      <Compile Update="Pages\TrainingProgramPage.xaml.cs">
         <DependentUpon>TrainingProgramPage.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
@@ -45,16 +45,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="CustomControls\dark_btn.xaml">
-        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      </EmbeddedResource>
-      <EmbeddedResource Update="CustomControls\light_btn.xaml">
-        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      </EmbeddedResource>
       <EmbeddedResource Update="CustomControls\MyButton.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
-      <EmbeddedResource Update="ExercisePages\SendPage.xaml">
+      <EmbeddedResource Update="Pages\SendPage.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
       <EmbeddedResource Update="Pages\LoginPage.xaml">

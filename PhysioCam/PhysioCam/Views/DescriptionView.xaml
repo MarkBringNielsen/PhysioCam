@@ -10,7 +10,7 @@
                     Clicked="DescriptionButtonOnClicked"/>
             
             <ScrollView HeightRequest="{OnPlatform iOS=250, Android= 250}" VerticalOptions="End">
-                <Editor AutoSize="TextChanges" Placeholder="Describe the exercise" PlaceholderColor="Black" FontFamily="Roboto-Regular" BackgroundColor="{StaticResource Grey}">
+                <Editor AutoSize="TextChanges" Placeholder="Describe the exercise" PlaceholderColor="Black" FontFamily="Roboto-Regular" BackgroundColor="{StaticResource Grey}" x:Name="description">
                 </Editor>
             </ScrollView>
             

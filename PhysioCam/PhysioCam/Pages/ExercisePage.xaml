@@ -7,11 +7,9 @@
              Title="New exercise">
     <ContentPage.Content>
         <StackLayout Margin="10" HorizontalOptions="CenterAndExpand">
-            <Label Margin="10,0"
-                   FontSize="20"
-                   Style="{StaticResource PhysioCamLabel}">
-                Add photos
-            </Label>
+            <Frame Style="{StaticResource GreyFrame}">
+                <Entry Style="{StaticResource UserEntry}" Placeholder="Exercise name" x:Name="exerciseName"/>
+            </Frame>
             <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal">
                 <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                     <views:ExercisePictureButtonView/>
@@ -20,7 +18,7 @@
                 </StackLayout>
             </ScrollView>
             
-            <views:DescriptionView/>
+            <views:DescriptionView x:Name="exerciseDescription"/>
             
             <StackLayout Spacing="75" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                 <Button Text="New Exercise"                     

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PhysioCam.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PhysioCam.Data;
 
 namespace PhysioCam.ExercisePages
 {
@@ -32,11 +33,13 @@ namespace PhysioCam.ExercisePages
 
         private async void DoneButtonOnClicked(object sender, EventArgs e)
         {
-            // TODO: Save this exercise
+            await Navigation.PopAsync();    
+        }
 
-            //Navigation.PopAsync();
-            await Navigation.PushAsync(new SendPage());
-
+        private void SaveExercise(object sender)
+        {
+            
+             new Exercise(exerciseName.Text, "");
         }
     }
 }

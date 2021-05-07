@@ -13,8 +13,10 @@ namespace PhysioCam
 
         private async void OnButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ExercisePage());
-            //await Navigation.PushAsync(new TrainingProgramPage());
+            ExercisePage exercisePage = new ExercisePage();
+            await Navigation.PushAsync(exercisePage);
+            Navigation.InsertPageBefore(new TrainingProgramPage(), exercisePage);
+            
         }
     }
 }

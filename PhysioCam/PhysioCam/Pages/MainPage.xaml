@@ -36,18 +36,18 @@
                     Text="Open existing training program"
                     Style="{StaticResource DarkBtn}"
                 Padding="0,25"
-                    Clicked="OnButtonClicked" 
+                     
                     />
             <Button
                     Text="Standard descriptions"
                     Style="{StaticResource DarkBtn}"
                 Padding="0,25"
-                    Clicked="OnButtonClicked" />
+                     />
             <Button 
                     Text="Settings"
                     Style="{StaticResource DarkBtn}"
                 Padding="0,25"
-                    Clicked="OnButtonClicked" />
+                     />
 
         </StackLayout>
       
