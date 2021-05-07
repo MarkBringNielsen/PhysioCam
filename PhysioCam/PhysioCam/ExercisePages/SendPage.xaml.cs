@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using Plugin.Connectivity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ConnectivityChangedEventArgs = Plugin.Connectivity.Abstractions.ConnectivityChangedEventArgs;
 
 namespace PhysioCam.ExercisePages
 {
@@ -15,7 +12,32 @@ namespace PhysioCam.ExercisePages
         public SendPage()
         {
             InitializeComponent();
+            HandleConnectionStatus();
         }
+
+        protected override void OnAppearing()
+        {
+            CrossConnectivity.Current.ConnectivityChanged += HandleConnectionStatus;
+            base.OnAppearing();
+        }
+
+        private void HandleConnectionStatus(object sender = null, ConnectivityChangedEventArgs e = null)
+        {
+            bool connected = CrossConnectivity.Current.IsConnected;
+            if (!connected)
+            {
+                AlertUserOfConnectionStatus();
+            }
+        }
+
+        private async void AlertUserOfConnectionStatus()
+        {
+            const string message = "You have no internet connection and will be returned to the previous page.";
+            await DisplayAlert("No Internet", message, "OK");
+            await Navigation.PopAsync();
+        }
+
+
         async void OnButtonClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new ExercisePage());
