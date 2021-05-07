@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.Pages.LoginPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#37703E" Padding="50">
+            <Image Source="Logo"/>
+            <Image Source="PhysioCam_white"/>
+            
+            <Entry Placeholder="Username" PlaceholderColor="White" TextColor="White" />
+            <Entry Placeholder="Password" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+            <Button Text="Login" BackgroundColor="White" CornerRadius="12" TextColor="#37703E" Clicked="Handle_Login"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

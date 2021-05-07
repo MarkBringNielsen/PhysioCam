@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.Views.DescriptionView">
+    <ContentView.Content>
+        <StackLayout>
+            <Button VerticalOptions="StartAndExpand" Text="Add saved standard description" 
+                    Style="{StaticResource DarkBtn}"
+                    Clicked="DescriptionButtonOnClicked"/>
+            
+            <ScrollView HeightRequest="{OnPlatform iOS=250, Android= 250}" VerticalOptions="End">
+                <Editor AutoSize="TextChanges" Placeholder="Describe the exercise" PlaceholderColor="Black" FontFamily="Roboto-Regular" BackgroundColor="{StaticResource Grey}">
+                </Editor>
+            </ScrollView>
+            
+            <StackLayout VerticalOptions="StartAndExpand" Orientation="Horizontal">
+                <CheckBox VerticalOptions="Center" Color="{StaticResource DarkGreen}" HorizontalOptions="CenterAndExpand"/>
+                <Label VerticalOptions="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" Text="Save as standard description?" FontAttributes="Italic"/>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
+    

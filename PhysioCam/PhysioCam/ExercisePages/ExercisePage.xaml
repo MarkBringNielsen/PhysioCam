@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.ExercisePages.ExercisePage"
+             xmlns:views="clr-namespace:PhysioCam.Views"
+             Title="New exercise">
+    <ContentPage.Content>
+        <StackLayout Margin="10" HorizontalOptions="CenterAndExpand">
+            <Label Margin="10,0" 
+                   FontFamily="Roboto-Regular" 
+                   FontSize="20"
+                   TextColor="Black">
+                Add photos
+            </Label>
+            <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal">
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <views:ExercisePictureButtonView/>
+                    <views:ExercisePictureButtonView/>
+                    <views:ExercisePictureButtonView/>
+                </StackLayout>
+            </ScrollView>
+            
+            <views:DescriptionView/>
+            
+            <StackLayout Spacing="75" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                <Button Text="New Exercise"                     
+                        Style="{StaticResource DarkBtn}"
+                        Clicked="NewExerciseButtonOnClicked"/>
+                <Button Text="Done"
+                        WidthRequest="150"
+                        Style="{StaticResource LightBtn}"
+                        Clicked="DoneButtonOnClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
