@@ -7,10 +7,9 @@
              Title="New exercise">
     <ContentPage.Content>
         <StackLayout Margin="10" HorizontalOptions="CenterAndExpand">
-            <Label Margin="10,0" 
-                   FontFamily="Roboto-Regular" 
+            <Label Margin="10,0"
                    FontSize="20"
-                   TextColor="Black">
+                   Style="{StaticResource PhysioCamLabel}">
                 Add photos
             </Label>
             <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal">

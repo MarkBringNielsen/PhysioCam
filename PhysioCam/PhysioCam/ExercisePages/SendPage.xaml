@@ -3,33 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:PhysioCam.Views;assembly=PhysioCam"
              x:Class="PhysioCam.ExercisePages.SendPage"
-             Title="Send" 
-             
-             
+             Title="Send"
 >
     <ContentPage.Content>
         <StackLayout Margin="10">
             <StackLayout Spacing="25" HorizontalOptions="CenterAndExpand" WidthRequest="350">
-                <Entry Placeholder="Training program - Name" PlaceholderColor="Black" FontFamily="Roboto-Regular"/>
-                <Button Text="Review program before sending"
+                <Frame Style="{StaticResource GreyFrame}">
+                    <Entry Placeholder="Training program - Name" Style="{StaticResource UserEntry}"/>
+                </Frame>
+                
+                <Button Text="Review program"
                         Style="{StaticResource DarkBtn}"/>
                 <Label
                     FontFamily="Roboto-Regular"
                     FontSize="20"
-                    TextColor="Black">
+                    Style="{StaticResource PhysioCamLabel}">
                     Here you must provide the email, which the training program will be sent to. As soon as you press "Send", a PDF-file will be generated, and automatically sent.
                 </Label>
-                <Frame CornerRadius="15" BackgroundColor="{StaticResource Grey}" Padding="10,0">
-                    <Entry Placeholder="PDF name  (Optional)" PlaceholderColor="Black"/>
+                <Frame Style="{StaticResource GreyFrame}">
+                    <Entry Placeholder="PDF name  (Optional)" Style="{StaticResource UserEntry}"/>
                 </Frame>
-                <Frame CornerRadius="15" BackgroundColor="{StaticResource Grey}" Padding="10,0">
-                    <Entry  Placeholder="Customers email" PlaceholderColor="Black" FontFamily="Roboto-Regular"/>
+                <Frame Style="{StaticResource GreyFrame}">
+                    <Entry  Placeholder="Customers email" Style="{StaticResource UserEntry}"/>
 
                 </Frame>
 
                 <StackLayout Orientation="Horizontal" Spacing="5">
                     <CheckBox VerticalOptions="Center" Color="{StaticResource DarkGreen}"/>
-                    <Label Text="Send to your email" FontAttributes="Italic" VerticalOptions="Center" FontFamily="Roboto-Regular" TextColor="Black"/>
+                    <Label Text="Send to your email as well" FontAttributes="Italic" VerticalOptions="Center" Style="{StaticResource PhysioCamLabel}"/>
 
                 </StackLayout>
 
