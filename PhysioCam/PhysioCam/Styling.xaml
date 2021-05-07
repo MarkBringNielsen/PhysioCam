@@ -20,10 +20,22 @@
     <Style TargetType="Button" BasedOn="{StaticResource DarkBtn}"  x:Key="LightBtn">
         <Setter Property="BackgroundColor" Value="{StaticResource LightGreen}" />
     </Style>
-
     <Style TargetType="NavigationPage">
         <Setter Property="BarBackgroundColor" Value="White" />
         <Setter Property="BarTextColor" Value="Black" />
+    </Style>
+    <Style TargetType="Frame" x:Key="GreyFrame">
+        <Setter Property="CornerRadius" Value="15"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource Grey}"/>
+        <Setter Property="Padding" Value="10, 0"/>
+    </Style>
+    <Style TargetType="Entry" x:Key="UserEntry">
+        <Setter Property="PlaceholderColor" Value="Black"/>
+        <Setter Property="FontFamily" Value="Roboto-Regular"/>
+    </Style>
+    <Style TargetType="Label" x:Key="PhysioCamLabel">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontFamily" Value="Roboto-Regular"/>
     </Style>
 
 </ResourceDictionary>
