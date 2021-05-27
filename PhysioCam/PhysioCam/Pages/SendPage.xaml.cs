@@ -1,4 +1,6 @@
 ﻿using System;
+using PhysioCam.Data;
+using PhysioCam.ViewModels;
 using Plugin.Connectivity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,8 +11,12 @@ namespace PhysioCam.ExercisePages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SendPage : ContentPage
     {
+        private TrainingProgramManager programManager;
+        private readonly TrainingProgramViewModel _viewModel;
         public SendPage()
         {
+            _viewModel = DependencyService.Get<TrainingProgramViewModel>();
+            programManager = new TrainingProgramManager();
             InitializeComponent();
             HandleConnectionStatus();
         }
@@ -42,7 +48,17 @@ namespace PhysioCam.ExercisePages
 
         private async void SendButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PopToRootAsync();
+            try
+            {
+                await programManager.PostTrainingProgram(_viewModel.CurrentTrainingProgram);
+                await Navigation.PopToRootAsync();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
+
+            
         }
 
         

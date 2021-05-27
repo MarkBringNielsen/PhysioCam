@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using static System.Net.Mime.MediaTypeNames;
@@ -7,6 +8,17 @@ namespace PhysioCam.Data
 {
     public class Exercise
     {
+        [JsonProperty("id")]
+        public int ID { get; set; }
+
+        [JsonProperty("Title")]
+        public string Name { get; set; }
+
+        [JsonProperty("Image")]
+        public List<ExerciseImage> Images { get; set; }
+
+        [JsonProperty("Description")]
+        public string Description { get; set; }
 
         public Exercise() { }
 
@@ -16,10 +28,7 @@ namespace PhysioCam.Data
             Description = description;
         }
 
-        public string Name { get; set; }
-        //public List<Image> Images { get; set; }
-
-        public string Description { get; set; }
+       
 
 
 

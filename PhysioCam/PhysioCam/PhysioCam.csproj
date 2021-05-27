@@ -21,6 +21,7 @@
 
     <ItemGroup>
         <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <PackageReference Include="Xam.Plugin.Connectivity" Version="4.0.0.190-beta" />
         <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />

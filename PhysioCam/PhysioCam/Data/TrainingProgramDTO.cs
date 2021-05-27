@@ -1,14 +1,12 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Text;
 
 namespace PhysioCam.Data
 {
-    public class TrainingProgram
+    class TrainingProgramDTO
     {
-        
         [JsonProperty("id")]
         public int ID { get; set; }
         [JsonProperty("Title")]
@@ -16,16 +14,6 @@ namespace PhysioCam.Data
         [JsonProperty("Description")]
         public string Description { get; set; }
         [JsonProperty("exercises")]
-        public ObservableCollection<Exercise> Exercises { get; }
-
-        public TrainingProgram()
-        {
-            Exercises = new ObservableCollection<Exercise>();
-        }
-
-        public void AddExercise(Exercise exercise)
-        {
-            Exercises.Add(exercise);
-        }
+        public List<int> Exercises { get; set; }
     }
 }

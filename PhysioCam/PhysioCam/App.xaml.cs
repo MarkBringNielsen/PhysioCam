@@ -2,6 +2,7 @@
 using Xamarin.Forms.Xaml;
 using PhysioCam.Pages;
 using PhysioCam.ViewModels;
+using PhysioCam.Data;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -12,6 +13,7 @@ namespace PhysioCam
         public App()
         {
             DependencyService.Register<TrainingProgramViewModel>();
+            DependencyService.Register<ApiClient>();
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
