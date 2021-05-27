@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:PhysioCam"
              xmlns:Controls="clr-namespace:PhysioCam.CustomControls"
              x:Class="PhysioCam.MainPage"
+             xmlns:views="clr-namespace:PhysioCam.Views"
              NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
@@ -17,21 +18,22 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Padding="0,50,0,0">
-                <Image Source="Logo" HeightRequest="50" Margin="-50,0,-75,0"/>
-                <Image Source="PhysioCam_black" HeightRequest="50"/>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                <Image Source="Logo_header" HeightRequest="100" />
+                
             </StackLayout>
 
         </Grid>
 
 
 
-        <StackLayout Padding="25" Spacing="25">
-            <ImageButton
+        <StackLayout Padding="25,0" Spacing="25">
+            <!--<ImageButton
                     Source="Camera_white"
                     CornerRadius="12"
                     BackgroundColor="{StaticResource LightGreen}"
-                    Clicked="OnButtonClicked" HeightRequest="200"/>
+                    Clicked="OnButtonClicked" HeightRequest="200"/>-->
+            <views:ImageButtonWithText></views:ImageButtonWithText>
             <Button  
                     Text="Open existing training program"
                     Style="{StaticResource DarkBtn}"

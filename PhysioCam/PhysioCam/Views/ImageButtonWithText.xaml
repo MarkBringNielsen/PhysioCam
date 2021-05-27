@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.Views.ImageButtonWithText">
+    <ContentView.Content>
+        <Frame HeightRequest="200" Style="{StaticResource GreyFrame}" BackgroundColor="{StaticResource LightGreen}" >
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="Frame"/>
+            </Frame.GestureRecognizers>
+            <StackLayout >
+                <Image Source="camera_white" HeightRequest="200" Margin="0,-20,0,-30"/>
+                <Label Text="Create new program" FontSize="20" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

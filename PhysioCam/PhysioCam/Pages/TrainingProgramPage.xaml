@@ -16,10 +16,10 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame BackgroundColor="{StaticResource DarkGreen}" Style="{StaticResource GreyFrame}">
+                                <Frame BackgroundColor="{StaticResource DarkGreen}" Style="{StaticResource GreyFrame}" Padding="10" Margin="0,10">
                                     <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
-                                        <Label Text="{Binding Name}" TextColor="White" VerticalOptions="CenterAndExpand"/>
-                                        <Button Text="X" HorizontalOptions="EndAndExpand"/>
+                                        <Label Text="{Binding Name}" TextColor="White" VerticalOptions="CenterAndExpand" FontSize="20"/>
+                                        <ImageButton Source="cross_white" HorizontalOptions="EndAndExpand" BackgroundColor="#00FBC1BC" WidthRequest="25"/>
                                     </StackLayout>
                                 </Frame>
                             </ViewCell>

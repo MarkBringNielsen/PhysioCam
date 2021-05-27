@@ -12,7 +12,7 @@
             </Frame>
             <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal">
                 <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                    <views:ExercisePictureButtonView/>
+                    <views:ExercisePictureButtonView x:Name="presentationButton"/>
                     <views:ExercisePictureButtonView/>
                     <views:ExercisePictureButtonView/>
                 </StackLayout>
