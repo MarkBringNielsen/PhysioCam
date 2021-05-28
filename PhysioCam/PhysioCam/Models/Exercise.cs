@@ -1,10 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using static System.Net.Mime.MediaTypeNames;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace PhysioCam.Data
+namespace PhysioCam.Models
 {
     public class Exercise
     {

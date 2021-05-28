@@ -6,7 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ConnectivityChangedEventArgs = Plugin.Connectivity.Abstractions.ConnectivityChangedEventArgs;
 
-namespace PhysioCam.ExercisePages
+namespace PhysioCam.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SendPage : ContentPage

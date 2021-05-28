@@ -4,8 +4,8 @@ using Xamarin.Forms;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
-using PhysioCam.ExercisePages;
 using System.Threading.Tasks;
+using PhysioCam.Pages;
 
 namespace PhysioCam.ViewModels
 {

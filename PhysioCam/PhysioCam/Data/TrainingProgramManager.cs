@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using PhysioCam.Models;
 using Xamarin.Forms;
 
 namespace PhysioCam.Data

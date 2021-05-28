@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PhysioCam.Data
+namespace PhysioCam.Models
 {
     public class ExerciseImage
     {

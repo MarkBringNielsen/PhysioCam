@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using PhysioCam.Data;
+using PhysioCam.Models;
 
 namespace PhysioCam.ViewModels
 {

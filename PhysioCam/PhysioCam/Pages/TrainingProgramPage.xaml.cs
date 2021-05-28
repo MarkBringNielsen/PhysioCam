@@ -1,12 +1,9 @@
 ﻿using System;
+using PhysioCam.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using PhysioCam.Data;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using PhysioCam.ViewModels;
 
-namespace PhysioCam.ExercisePages
+namespace PhysioCam.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TrainingProgramPage : ContentPage

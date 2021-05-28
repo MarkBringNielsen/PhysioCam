@@ -1,9 +1,8 @@
 ﻿using System;
-using PhysioCam.ExercisePages;
 using PhysioCam.ViewModels;
 using Xamarin.Forms;
 
-namespace PhysioCam
+namespace PhysioCam.Pages
 {
     public partial class MainPage : ContentPage
     {
