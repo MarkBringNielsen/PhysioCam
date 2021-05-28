@@ -10,6 +10,9 @@
     <ContentPage.Content>
         <StackLayout Padding="10">
             <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical" Padding="0,10,0,50">
+                <Frame Style="{StaticResource GreyFrame}">
+                    <Entry Style="{StaticResource UserEntry}" Placeholder="Training Program Name" x:Name="TrainingProgramName"/>
+                </Frame>
                 <Button Text="Add new exercise" Style="{StaticResource LightBtn}" Clicked="AddExerciseButtonClicked"/>
 
                 <ListView x:Name="ExerciseListView" ItemsSource="{Binding Exercises}"  HasUnevenRows="True">
@@ -30,7 +33,7 @@
                 
             </StackLayout>
             
-            <views:DescriptionView/>
+            <views:DescriptionView x:Name="TrainingProgramDescription"/>
 
             
                 <Button Text="Send" Clicked="DoneButtonOnClicked" Style="{StaticResource DarkBtn}"/>

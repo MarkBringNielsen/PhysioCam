@@ -22,12 +22,19 @@ namespace PhysioCam.Pages
 
         private async void DoneButtonOnClicked(object sender, EventArgs e)
         {
+            SaveTrainingProgram();
             await Navigation.PushAsync(new SendPage());
         }
 
         private async void AddExerciseButtonClicked(object sender, EventArgs e)
         {
+            SaveTrainingProgram();
             await Navigation.PushAsync(new ExercisePage());
+        }
+
+        private async void SaveTrainingProgram()
+        {
+            _viewModel.SaveTrainingProgram(TrainingProgramDescription.Description, TrainingProgramName.Text);
         }
     }
 }

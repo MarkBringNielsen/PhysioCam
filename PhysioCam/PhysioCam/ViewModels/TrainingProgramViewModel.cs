@@ -28,5 +28,11 @@ namespace PhysioCam.ViewModels
         {
             CurrentTrainingProgram.AddExercise(new Exercise(name, description));
         }
+
+        public void SaveTrainingProgram(string description, string title)
+        {
+            CurrentTrainingProgram.Description = description;
+            CurrentTrainingProgram.Title = title;
+        }
     }
 }
