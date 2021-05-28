@@ -11,11 +11,8 @@
                 <Entry Style="{StaticResource UserEntry}" Placeholder="Exercise name" x:Name="exerciseName"/>
             </Frame>
             <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal">
-                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                    <views:ExercisePictureButtonView x:Name="presentationButton"/>
-                    <views:ExercisePictureButtonView/>
-                    <views:ExercisePictureButtonView/>
-                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" x:Name="ButtonList"/>
+
             </ScrollView>
             
             <views:DescriptionView x:Name="exerciseDescription"/>

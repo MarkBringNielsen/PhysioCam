@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using PhysioCam.ViewModels;
 using PhysioCam.Views;
+using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,27 +13,34 @@ namespace PhysioCam.Pages
     public partial class ExercisePage : ContentPage
     {
         private TrainingProgramViewModel _viewModel;
-        public List<ExercisePictureButtonView> ButtonViews { get; set; }
+        public ObservableCollection<ExercisePictureButtonView> ButtonViews { get; set; }
         
         public ExercisePage()
         {
             _viewModel = DependencyService.Get<TrainingProgramViewModel>();
-            ButtonViews = new List<ExercisePictureButtonView>
+            ButtonViews = new ObservableCollection<ExercisePictureButtonView>
             {
                 new ExercisePictureButtonView(),
                 new ExercisePictureButtonView(),
                 new ExercisePictureButtonView(),
             };
             InitializeComponent();
+            foreach (var view in ButtonViews)
+            {
+                ButtonList.Children.Add(view);
+            }
+            
         }
 
         private void NewExerciseButtonOnClicked(object sender, EventArgs e)
         {
-            // TODO: Save this exercise
-
             SaveExercise();
             exerciseName.Text = string.Empty;
             exerciseDescription.Reset();
+            foreach (var imageButton in ButtonViews)
+            {
+                imageButton.Reset();
+            }
         }
 
         private async void DoneButtonOnClicked(object sender, EventArgs e)
@@ -43,7 +52,14 @@ namespace PhysioCam.Pages
 
         private void SaveExercise()
         {
-            _viewModel.AddNewExercise(exerciseName.Text, exerciseDescription.Description);
+            List<MediaFile> images = new List<MediaFile>();
+            foreach (var imageButton in ButtonViews)
+            {
+                var image = imageButton.GetImageFile();
+                if ( image == null){ continue; }
+                images.Add(image);
+            }
+            _viewModel.AddNewExercise(exerciseName.Text, exerciseDescription.Description, images);
         }
     }
 }

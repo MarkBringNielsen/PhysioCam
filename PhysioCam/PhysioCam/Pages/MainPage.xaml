@@ -37,7 +37,8 @@
             <Button  
                     Text="Open existing training program"
                     Style="{StaticResource DarkBtn}"
-                Padding="0,25"
+                    Padding="0,25"
+                    Clicked="OnExistingProgramButtonClicked"
                      
                     />
             <Button

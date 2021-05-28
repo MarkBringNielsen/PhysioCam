@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Plugin.Media.Abstractions;
 
 namespace PhysioCam.Models
 {
@@ -9,5 +10,6 @@ namespace PhysioCam.Models
 
         [JsonProperty("url")]
         public string Url { get; set; }
+        public MediaFile LocalImage { get; set; }
     }
 }

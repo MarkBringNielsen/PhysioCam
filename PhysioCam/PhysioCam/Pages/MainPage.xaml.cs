@@ -13,13 +13,18 @@ namespace PhysioCam.Pages
             InitializeComponent();
         }
 
-        private async void OnButtonClicked(object sender, EventArgs e)
+        private async void OnNewProgramButtonClicked(object sender, EventArgs e)
         {
             _viewModel.NewTrainingProgram();
             ExercisePage exercisePage = new ExercisePage();
             await Navigation.PushAsync(exercisePage);
             Navigation.InsertPageBefore(new TrainingProgramPage(), exercisePage);
             
+        }
+
+        private async void OnExistingProgramButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ExistingProgramsPage());
         }
     }
 }

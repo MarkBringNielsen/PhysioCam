@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
+using Plugin.Media.Abstractions;
 
 namespace PhysioCam.Models
 {
@@ -12,17 +13,18 @@ namespace PhysioCam.Models
         public string Name { get; set; }
 
         [JsonProperty("Image")]
-        public List<ExerciseImage> Images { get; set; }
+        public List<MediaFile> Images { get; set; }
 
         [JsonProperty("Description")]
         public string Description { get; set; }
 
         public Exercise() { }
 
-        public Exercise(string name, string description)
+        public Exercise(string name, string description, List<MediaFile> images)
         {
             Name = name;
             Description = description;
+            Images = images;
         }
 
        

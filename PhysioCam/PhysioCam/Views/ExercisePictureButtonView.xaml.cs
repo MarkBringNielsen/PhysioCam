@@ -9,6 +9,7 @@ namespace PhysioCam.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExercisePictureButtonView : ContentView
     {
+        private MediaFile photo;
         public ExercisePictureButtonView()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace PhysioCam.Views
 
         private async void TakePhoto()
         {
-            MediaFile photo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions()
+            photo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions()
             {
                 DefaultCamera = CameraDevice.Rear,
                 Directory = "PhysioCam",
@@ -44,6 +45,17 @@ namespace PhysioCam.Views
         private async void DisplayException(Exception exception)
         {
             await Application.Current.MainPage.DisplayAlert("Error", exception.Message, "Ok");
+        }
+
+        internal void Reset()
+        {
+            photo = null;
+            ImageButton.Source = "add_picture";
+        }
+
+        public MediaFile GetImageFile()
+        {
+            return photo;
         }
     }
 }

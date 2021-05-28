@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PhysioCam.Models;
 using Xamarin.Forms;
+using System.IO;
 
 namespace PhysioCam.Data
 {
@@ -64,7 +65,30 @@ namespace PhysioCam.Data
 
         private async Task<int> PostExercise(HttpClient client, Exercise exercise)
         {
-            HttpContent content = new StringContent(JsonConvert.SerializeObject(exercise), Encoding.UTF8, "application/json");
+            
+            var ex = new Exercise(exercise.Name, exercise.Description, new List<Plugin.Media.Abstractions.MediaFile>());
+            var imgs = exercise.Images;
+            
+
+            MultipartFormDataContent content = new MultipartFormDataContent();
+            content.Add(new StringContent(JsonConvert.SerializeObject(ex), Encoding.UTF8, "application/json"),"data");
+            foreach (var img in imgs)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    img.GetStream().CopyTo(memoryStream);
+                    img.Dispose();
+                    
+                    content.Add(new ByteArrayContent(memoryStream.ToArray()), "files.Image");
+                }
+                
+            }
+
+
+            
+
+
+
             HttpResponseMessage responseMessage = await client.PostAsync(ApiClient.uri.AbsoluteUri + "exercises", content);
             if (!responseMessage.IsSuccessStatusCode)
             {

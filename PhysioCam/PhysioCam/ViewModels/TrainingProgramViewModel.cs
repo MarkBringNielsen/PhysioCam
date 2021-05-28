@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using PhysioCam.Data;
 using PhysioCam.Models;
+using Plugin.Media.Abstractions;
 
 namespace PhysioCam.ViewModels
 {
@@ -24,9 +25,9 @@ namespace PhysioCam.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        internal void AddNewExercise(string name, string description)
+        internal void AddNewExercise(string name, string description, List<MediaFile> images)
         {
-            CurrentTrainingProgram.AddExercise(new Exercise(name, description));
+            CurrentTrainingProgram.AddExercise(new Exercise(name, description, images));
         }
 
         public void SaveTrainingProgram(string description, string title)
