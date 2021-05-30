@@ -17,6 +17,8 @@ namespace PhysioCam.Pages
             _viewModel = DependencyService.Get<TrainingProgramViewModel>();
             
             ExerciseListView.ItemsSource = _viewModel.CurrentTrainingProgram.Exercises;
+            TrainingProgramName.Text = _viewModel.CurrentTrainingProgram.Title;
+            TrainingProgramDescription.Description = _viewModel.CurrentTrainingProgram.Description;
             
         }
 

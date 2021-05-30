@@ -24,6 +24,7 @@ namespace PhysioCam.Pages
 
         private async void OnExistingProgramButtonClicked(object sender, EventArgs e)
         {
+            await _viewModel.CollectExistingPrograms();
             await Navigation.PushAsync(new ExistingProgramsPage());
         }
     }

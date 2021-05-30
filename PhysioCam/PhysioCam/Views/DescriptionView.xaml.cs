@@ -12,11 +12,15 @@ namespace PhysioCam.Views
     public partial class DescriptionView : ContentView
     {
         public string Description 
-        { 
-            get 
+        {
+            get
             {
                 return description.Text;
-            } 
+            }
+            set
+            {
+                description.Text = value;
+            }
              
         }
         public DescriptionView()

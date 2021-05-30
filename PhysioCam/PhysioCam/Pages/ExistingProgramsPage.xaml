@@ -8,7 +8,20 @@
             <Frame Style="{StaticResource GreyFrame}">
                 <Entry TextChanged="Entry_TextChanged" FontSize="20"/>
             </Frame>
-            
+            <ListView x:Name="ProgramListView" ItemsSource="{Binding Programs}"  HasUnevenRows="True" ItemSelected="Program_Selected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="{StaticResource DarkGreen}" Style="{StaticResource GreyFrame}" Padding="10" Margin="0,10">
+                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Title}" TextColor="White" VerticalOptions="CenterAndExpand" FontSize="20"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
             <Label x:Name="label"/>
         </StackLayout>
     </ContentPage.Content>

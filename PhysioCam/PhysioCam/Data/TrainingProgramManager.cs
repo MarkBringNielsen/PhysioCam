@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using PhysioCam.Models;
 using Xamarin.Forms;
 using System.IO;
+using System.Collections.ObjectModel;
+using Plugin.Media.Abstractions;
 
 namespace PhysioCam.Data
 {
@@ -20,14 +22,14 @@ namespace PhysioCam.Data
             apiClient = DependencyService.Get<ApiClient>();
         }
 
-        public async Task<IEnumerable<TrainingProgram>> GetTrainingPrograms()
+        public async Task<ObservableCollection<TrainingProgram>> GetTrainingPrograms()
         {
             HttpClient client = await apiClient.GetClientAsync();
             HttpResponseMessage responseMessage = await client.GetAsync(ApiClient.uri.AbsoluteUri+endPoint);
             if (responseMessage.IsSuccessStatusCode)
             {
                 string responseContent = await responseMessage.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<IEnumerable<TrainingProgram>>(responseContent);
+                return JsonConvert.DeserializeObject<ObservableCollection<TrainingProgram>>(responseContent);
             }
             else
             {
@@ -66,20 +68,30 @@ namespace PhysioCam.Data
         private async Task<int> PostExercise(HttpClient client, Exercise exercise)
         {
             
-            var ex = new Exercise(exercise.Name, exercise.Description, new List<Plugin.Media.Abstractions.MediaFile>());
-            var imgs = exercise.Images;
+            var ex = new Exercise(exercise.Name, exercise.Description, new List<MediaFile>());
+            var imgs = new List<MediaFile>(exercise.Images);
             
 
             MultipartFormDataContent content = new MultipartFormDataContent();
             content.Add(new StringContent(JsonConvert.SerializeObject(ex), Encoding.UTF8, "application/json"),"data");
             foreach (var img in imgs)
             {
+
+                var stream = img.GetStream();
+                var bytes = new byte[stream.Length];
+                await stream.ReadAsync(bytes, 0, (int)stream.Length);
+                string imageBase64 = Convert.ToBase64String(bytes);
+                //Task<string> sendFotoResult = restClient.SendImage(imageBase64);
+                //string result = await sendFotoResult;
+
+
+
                 using (var memoryStream = new MemoryStream())
                 {
                     img.GetStream().CopyTo(memoryStream);
                     img.Dispose();
                     
-                    content.Add(new ByteArrayContent(memoryStream.ToArray()), "files.Image");
+                    content.Add(new ByteArrayContent(new MemoryStream(bytes).ToArray()), "files.Image");
                 }
                 
             }
